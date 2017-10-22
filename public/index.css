@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+   height: inherit;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+ }
+
+.message-title {
+    color: #666;
+    font-weight: 300;
+}
+
+.message-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: 1px solid #ddd;
+    width: 60%;
+    color:black;
+    background-color: white;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.message-list li {
+    border-right: 3px solid #1cb3dc;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    display: flex;
+    position: relative;
+}
+
+.message-list li .message-container {
+    overflow: hidden;
+    flex: 1;
+    order: 2;
+}
+
+.message-list li .message-container h6 small {
+    float: right;
+    font-size: .8125rem;
+}
+
+  .message-container button {
+    position: absolute;
+    right: 2%;
+    top: calc(50% - 11px);
+    opacity: 0.2;
+}
+
+.message-container button:hover {
+    opacity: 1;
+}
+
+.message-form {
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+}
+
+.message-filter {
+    display: flex;
+    flex-direction: row;
+}
+
+.message-form input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding:8px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+
+
+.message-form button,
+.message-list button {
+    background: #28d;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+.message-form button:hover,
+.message-list button:hover {
+    background: #17c;
+}
+
+/* Buttons' focus effect */
+.message-form button:focus,
+.message-list button:focus {
+    border-color: #05a;
+}
+
+.message-form .radio-container {
+    display: flex;
+    flex-direction: initial;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio {
+    margin: 0.5rem;
+}
+
+.radio input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.radio input[type="radio"] + .radio-label:before {
+    content: '';
+    background: #f4f4f4;
+    border-radius: 100%;
+    border: 1px solid #b4b4b4;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    position: relative;
+    top: -0.2em;
+    margin-right: 1em;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    -webkit-transition: all 250ms ease;
+    transition: all 250ms ease;
+}
+
+.radio input[type="radio"]:checked + .radio-label:before {
+    background-color: #3197EE;
+    box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+
+.radio input[type="radio"]:focus + .radio-label:before {
+    outline: none;
+    border-color: #3197EE;
+}
+
+.radio input[type="radio"]:disabled + .radio-label:before {
+    box-shadow: inset 0 0 0 4px #f4f4f4;
+    border-color: #b4b4b4;
+    background: #b4b4b4;
+}
+.radio input[type="radio"] + .radio-label:empty:before {
+    margin-right: 0;
+}
